@@ -1,5 +1,6 @@
 # Live2D-Typecho-Plugin
-![](https://i.loli.net/2018/03/10/5aa37fc4ba2ca.png)
+
+![](https://cdn.imalan.cn/img/post/Pio.png)
 
 又来水文了……把可爱的看板娘捉到博客上吧！
 
