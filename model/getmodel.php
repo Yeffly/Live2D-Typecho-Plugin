@@ -1,8 +1,10 @@
-{
+<?php
+header("Content-type: application/json");
+echo '{
     "version":"1.0.0",
     "model":"model.moc",
     "textures":[
-        "textures/03.png"
+        "images.php?'.strval(rand()).'"
     ],
     "layout":{
         "center_x":0.0,
@@ -75,3 +77,5 @@
         ]
     }
 }
+';
+?>

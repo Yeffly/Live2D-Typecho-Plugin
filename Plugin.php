@@ -6,11 +6,11 @@
  * 
  * @package Live2D
  * @author 熊猫小A
- * @version 1.0
+ * @version 1.1
  * @link https://imalan.cn
  */
 
-define('Live2D_Plugin_VERSION', '1.0');
+define('Live2D_Plugin_VERSION', '1.1');
 class Live2D_Plugin implements Typecho_Plugin_Interface
 {   
     /**
@@ -46,8 +46,12 @@ class Live2D_Plugin implements Typecho_Plugin_Interface
     public static function config(Typecho_Widget_Helper_Form $form){
         $homeURL = new Typecho_Widget_Helper_Form_Element_Textarea('homeURL', NULL, '', _t('主页链接'), _t('主页链接，以“/”结尾'));
         $form->addInput($homeURL);
-        $nCustom = new Typecho_Widget_Helper_Form_Element_Textarea('nCustom', NULL, '3', _t('你有多少个模型？'), _t('把模型放在插件目录的Model文件夹下，命名按照 model1.json，model2.json 这样来，在这里填模型总数。默认有三套衣服。'));
-        $form->addInput($nCustom);
+        echo '<p>本插件需要加载jQuery库，如果你的主题没有引用请选择加载。<br />关于提示语的修改，请直接编辑 message.json。</p>';
+        $l2dst= new Typecho_Widget_Helper_Form_Element_Checkbox('l2dst',  array(
+            'jq' => _t('配置是否加载JQuery：勾选则加载不勾选则不加载')
+        ),
+        array('jq'), _t('基本设置'));
+        $form->addInput($l2dst);
     }
     
     /**
@@ -83,6 +87,8 @@ class Live2D_Plugin implements Typecho_Plugin_Interface
             <script type="text/javascript" src="/usr/plugins/Live2D/js/live2d.min.js?v='.Live2D_Plugin_VERSION.'"></script>
             <script type="text/javascript" src="/usr/plugins/Live2D/js/initlive2d.min.js?v='.Live2D_Plugin_VERSION.'"></script>
         ';
+        if (!empty(Helper::options()->plugin('Live2D')->l2dst) && in_array('jq', Helper::options()->plugin('Live2D')->l2dst)){
+            echo '<script  src="'.Helper::options()->pluginUrl . '/Live2D/js/jquery.min.js?v='.Live2D_Plugin_VERSION.'"></script>' . "\n";   }
     }
 
 
@@ -92,10 +98,10 @@ class Live2D_Plugin implements Typecho_Plugin_Interface
      * @return void
      */
     public static function insertLive2D(){
-        $html='<canvas data="'.Typecho_Widget::widget('Widget_Options')->plugin('Live2D')->nCustom.'" id="live2d" class="live2d" width="280" height="250"></canvas>
+        $html='<canvas id="live2d" class="live2d" width="280" height="250"></canvas>
         <div id="landlord" homeurl="'.Typecho_Widget::widget('Widget_Options')->plugin('Live2D')->homeURL.'">
-        <div id="message" class="message"></div>
-        <div id="live2d-button-padding"></div>
+        <div id="message" class="message"></div>       
+        <div id="live2d-button-padding" ></div>
         <div id="homeButton"><a href="/"><i class="live2d-button glyphicon glyphicon-home"></i></a></div>       
         <div id="changeButton"><i class="live2d-button glyphicon glyphicon-random"></i></div>
         <div id="messageButton"><i onclick="showHitokoto();" class="live2d-button glyphicon glyphicon-comment"></i></div>
