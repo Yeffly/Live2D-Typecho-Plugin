@@ -13,27 +13,33 @@
 			]
 		},
 		{
-			"selector": "#homeButton",
+			"selector": "#live2d-button-home",
 			"text": [
 				"回到开始的地方"
 			]
 		},
 		{
-			"selector": "#changeButton",
+			"selector": "#live2d-button-change",
 			"text": [
 				"喜欢换装 Play 吗？"
 			]
 		},
 		{
-			"selector": "#messageButton",
+			"selector": "#live2d-button-comment",
 			"text": [
 				"猜猜我会说什么？"
 			]
 		},
 		{
-			"selector": "#hideButton",
+			"selector": "#live2d-button-hide",
 			"text": [
 				"已经要说再见了吗"
+			]
+		},
+		{
+			"selector": "#live2d-button-photo",
+			"text": [
+				"想要给我照张相吗～"
 			]
 		},
 		{

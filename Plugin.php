@@ -46,11 +46,11 @@ class Live2D_Plugin implements Typecho_Plugin_Interface
     public static function config(Typecho_Widget_Helper_Form $form){
         $homeURL = new Typecho_Widget_Helper_Form_Element_Textarea('homeURL', NULL, '', _t('主页链接'), _t('主页链接，以“/”结尾'));
         $form->addInput($homeURL);
-        echo '<p>本插件需要加载jQuery库，如果你的主题没有引用请选择加载。<br />关于提示语的修改，请直接编辑 message.json。</p>';
+        echo '<p>本插件需要加载jQuery与Font Awesome，如果你的主题没有引用请选择加载。<br />关于提示语的修改，请直接编辑 message.json。</p>';
         $l2dst= new Typecho_Widget_Helper_Form_Element_Checkbox('l2dst',  array(
-            'jq' => _t('配置是否加载JQuery：勾选则加载不勾选则不加载')
+            'jq' => _t('配置是否加载JQuery：勾选则加载不勾选则不加载'),'fa'=>_t('配置是否加载Font Awesome：勾选则加载不勾选则不加载')
         ),
-        array('jq'), _t('基本设置'));
+        array('jq','fa'), _t('基本设置'));
         $form->addInput($l2dst);
     }
     
@@ -70,9 +70,12 @@ class Live2D_Plugin implements Typecho_Plugin_Interface
      * @return void
      */
     public static function header(){
-        echo '
-        <link rel="stylesheet" href="/usr/plugins/Live2D/css/live2d.min.css?v='.Live2D_Plugin_VERSION.'" />
-        ';
+        echo '<link rel="stylesheet" href="/usr/plugins/Live2D/css/live2d.min.css?v='.Live2D_Plugin_VERSION.'" />';
+        if (!empty(Helper::options()->plugin('Live2D')->l2dst) && in_array('fa', Helper::options()->plugin('Live2D')->l2dst))
+        {
+            echo '<link rel="stylesheet" href="/usr/plugins/Live2D/css/font-awesome.min.css?v='.Live2D_Plugin_VERSION.'" />';
+        }
+
     }
 
     /**
@@ -101,11 +104,13 @@ class Live2D_Plugin implements Typecho_Plugin_Interface
         $html='<canvas id="live2d" class="live2d" width="280" height="250"></canvas>
         <div id="landlord" homeurl="'.Typecho_Widget::widget('Widget_Options')->plugin('Live2D')->homeURL.'">
         <div id="message" class="message"></div>       
-        <div id="live2d-button-padding" ></div>
-        <div id="homeButton"><a href="/"><i class="live2d-button glyphicon glyphicon-home"></i></a></div>       
-        <div id="changeButton"><i class="live2d-button glyphicon glyphicon-random"></i></div>
-        <div id="messageButton"><i onclick="showHitokoto();" class="live2d-button glyphicon glyphicon-comment"></i></div>
-        <div id="hideButton"><i class="live2d-button glyphicon glyphicon-remove"></i></div>
+        <div id="live2d-tools">
+            <a href="/"><span id="live2d-button-home" class="fa fa-home live2d-button"></span></a>
+            <span id="live2d-button-change" class="fa fa-refresh live2d-button"></span>
+            <span id="live2d-button-comment" class="fa fa-comment live2d-button" style="font-size:18px"></span>
+            <span id="live2d-button-photo" class="fa fa-camera live2d-button" style="font-size:17px"></span>
+            <span id="live2d-button-hide" class="fa fa-close live2d-button" style="font-size:22px"></span>
+        </div>
         </div>';
         echo $html;
     }
