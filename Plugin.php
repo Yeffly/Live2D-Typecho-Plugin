@@ -6,11 +6,11 @@
  * 
  * @package Live2D
  * @author 熊猫小A
- * @version 1.2
+ * @version 1.3
  * @link https://imalan.cn
  */
 
-define('Live2D_Plugin_VERSION', '1.2');
+define('Live2D_Plugin_VERSION', '1.3');
 class Live2D_Plugin implements Typecho_Plugin_Interface
 {   
     /**
@@ -102,8 +102,8 @@ class Live2D_Plugin implements Typecho_Plugin_Interface
      */
     public static function insertLive2D(){
         $html='<canvas id="live2d" class="live2d" width="280" height="250"></canvas>
-        <div id="landlord" homeurl="'.Typecho_Widget::widget('Widget_Options')->plugin('Live2D')->homeURL.'">
-        <div id="message" class="message"></div>       
+        <div id="message" class="message"></div>
+        <div id="landlord" homeurl="'.Typecho_Widget::widget('Widget_Options')->plugin('Live2D')->homeURL.'">       
         <div id="live2d-tools">
             <a href="/"><span id="live2d-button-home" class="fa fa-home live2d-button"></span></a>
             <span id="live2d-button-change" class="fa fa-refresh live2d-button"></span>
