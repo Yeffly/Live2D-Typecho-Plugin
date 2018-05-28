@@ -43,6 +43,12 @@
 			]
 		},
 		{
+			"selector": "#live2d-button-info",
+			"text": [
+				"想知道更多关于我的事吗？"
+			]
+		},
+		{
 			"selector": "textarea#comment",
 			"text": [
 				"认真填写哦~"

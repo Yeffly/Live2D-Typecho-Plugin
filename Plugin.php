@@ -109,6 +109,7 @@ class Live2D_Plugin implements Typecho_Plugin_Interface
             <span id="live2d-button-change" class="fa fa-refresh live2d-button"></span>
             <span id="live2d-button-comment" class="fa fa-comment live2d-button" style="font-size:18px"></span>
             <span id="live2d-button-photo" class="fa fa-camera live2d-button" style="font-size:17px"></span>
+            <a href="https://imalan.cn/archives/95/" target="_blank"><span id="live2d-button-info" class="fa fa-info-circle live2d-button"></span></a>
             <span id="live2d-button-hide" class="fa fa-close live2d-button" style="font-size:22px"></span>
         </div>
         </div>';
