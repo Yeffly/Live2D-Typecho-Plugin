@@ -6,11 +6,11 @@
  * 
  * @package Live2D
  * @author 熊猫小A
- * @version 1.1
+ * @version 1.2
  * @link https://imalan.cn
  */
 
-define('Live2D_Plugin_VERSION', '1.1');
+define('Live2D_Plugin_VERSION', '1.2');
 class Live2D_Plugin implements Typecho_Plugin_Interface
 {   
     /**
