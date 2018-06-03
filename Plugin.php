@@ -6,11 +6,11 @@
  * 
  * @package Live2D
  * @author 熊猫小A
- * @version 2.01
+ * @version 2.02
  * @link https://imalan.cn
  */
 
-define('Live2D_Plugin_VERSION', '2.01');
+define('Live2D_Plugin_VERSION', '2.02');
 class Live2D_Plugin implements Typecho_Plugin_Interface
 {   
     /**
@@ -70,6 +70,8 @@ class Live2D_Plugin implements Typecho_Plugin_Interface
      * @return void
      */
     public static function header(){
+        if(Live2D_Plugin::isMobile()){echo '<script>var dMobile=true</script>';}
+        else{echo '<script>var dMobile=false</script>';}
         echo '<link rel="stylesheet" href="/usr/plugins/Live2D/css/live2d.min.css?v='.Live2D_Plugin_VERSION.'" />';
         if (!empty(Helper::options()->plugin('Live2D')->l2dst) && in_array('fa', Helper::options()->plugin('Live2D')->l2dst))
         {

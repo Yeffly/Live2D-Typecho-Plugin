@@ -48,20 +48,26 @@
 				"想知道更多关于我的事吗？"
 			]
 		},
+                {
+			"selector": "a[href=\"https://imalan.cn/\"]",
+			"text": [
+				"让我们回到开始的地方"
+			]
+		},
 		{
-			"selector": "a[href=\"/about.html\"]",
+			"selector": "a[href=\"https://imalan.cn/about.html\"]",
 			"text": [
 				"了解一下我的主人吧～"
 			]
 		},
 		{
-			"selector": "a[href=\"/bangumi.html\"]",
+			"selector": "a[href=\"https://imalan.cn/bangumi.html\"]",
 			"text": [
 				"二次元什么的最喜欢啦"
 			]
 		},
 		{
-			"selector": "a[href=\"/archives.html\"]",
+			"selector": "a[href=\"https://imalan.cn/archives.html\"]",
 			"text": [
 				"看看我的主人还写过什么吧"
 			]
