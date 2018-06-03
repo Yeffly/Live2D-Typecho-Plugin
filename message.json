@@ -13,39 +13,69 @@
 			]
 		},
 		{
-			"selector": "#live2d-button-home",
+			"selector": "#l2d-home",
 			"text": [
 				"回到开始的地方"
 			]
 		},
 		{
-			"selector": "#live2d-button-change",
+			"selector": "#l2d-change",
 			"text": [
 				"喜欢换装 Play 吗？"
 			]
 		},
 		{
-			"selector": "#live2d-button-comment",
+			"selector": "#l2d-message",
 			"text": [
 				"猜猜我会说什么？"
 			]
 		},
 		{
-			"selector": "#live2d-button-hide",
+			"selector": "#l2d-hide",
 			"text": [
 				"已经要说再见了吗"
 			]
 		},
 		{
-			"selector": "#live2d-button-photo",
+			"selector": "#l2d-photo",
 			"text": [
 				"想要给我照张相吗～"
 			]
 		},
 		{
-			"selector": "#live2d-button-info",
+			"selector": "#l2d-about",
 			"text": [
 				"想知道更多关于我的事吗？"
+			]
+		},
+		{
+			"selector": "a[href=\"/about.html\"]",
+			"text": [
+				"了解一下我的主人吧～"
+			]
+		},
+		{
+			"selector": "a[href=\"/bangumi.html\"]",
+			"text": [
+				"二次元什么的最喜欢啦"
+			]
+		},
+		{
+			"selector": "a[href=\"/archives.html\"]",
+			"text": [
+				"看看我的主人还写过什么吧"
+			]
+		},
+		{
+			"selector": "a[href=\"/\"]",
+			"text": [
+				"让我们回到开始的地方吧"
+			]
+		},
+		{
+			"selector": "a[href=\"https://img.imalan.cn\"]",
+			"text": [
+				"这里是主人的图床，有许多小姐姐"
 			]
 		},
 		{
@@ -87,13 +117,13 @@
 	],
 	"click": [
 		{
-			"selector": "#landlord",
+			"selector": "#live2d",
 			"text": [
 				"是…是不小心碰到了吧",
 				"萝莉控是什么呀",
 				"你看到我的小熊了吗",
-				"再摸的话我可要报警了！⌇●﹏●⌇",
-				"110吗，这里有个变态一直在摸我(ó﹏ò｡)"
+				"再摸的话我可要报警了！<br>⌇●﹏●⌇",
+				"110吗，这里有个变态一直在摸我<vr>(ó﹏ò｡)"
 			]
 		}
 	]

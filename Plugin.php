@@ -6,11 +6,11 @@
  * 
  * @package Live2D
  * @author 熊猫小A
- * @version 1.31
+ * @version 2.0
  * @link https://imalan.cn
  */
 
-define('Live2D_Plugin_VERSION', '1.31');
+define('Live2D_Plugin_VERSION', '2.0');
 class Live2D_Plugin implements Typecho_Plugin_Interface
 {   
     /**
@@ -101,19 +101,44 @@ class Live2D_Plugin implements Typecho_Plugin_Interface
      * @return void
      */
     public static function insertLive2D(){
-        $html='<canvas id="live2d" class="live2d" width="280" height="250"></canvas>
-        <div id="message" class="message"></div>
-        <div id="landlord" homeurl="'.Typecho_Widget::widget('Widget_Options')->plugin('Live2D')->homeURL.'">       
-        <div id="live2d-tools">
-            <a href="/"><span id="live2d-button-home" class="fa fa-home live2d-button"></span></a>
-            <span id="live2d-button-change" class="fa fa-refresh live2d-button"></span>
-            <span id="live2d-button-comment" class="fa fa-comment live2d-button" style="font-size:18px"></span>
-            <span id="live2d-button-photo" class="fa fa-camera live2d-button" style="font-size:17px"></span>
-            <a href="https://imalan.cn/archives/95/" target="_blank"><span id="live2d-button-info" class="fa fa-info-circle live2d-button"></span></a>
-            <span id="live2d-button-hide" class="fa fa-close live2d-button" style="font-size:22px"></span>
-        </div>
+        $html='<canvas id="live2d" class="live2d" width="280" height="250" homeurl="'.Typecho_Widget::widget('Widget_Options')->plugin('Live2D')->homeURL.'"></canvas>
+        <div id="l2d-tools-panel">
+            <a href="/" target="_self"><div id="l2d-home" class="l2d-tools l2d-tools-r">Home</div><a>
+            <div id="l2d-change" class="l2d-tools l2d-tools-r">Change</div>';
+            if(!Live2D_Plugin::isMobile()) {$html.='<div id="l2d-message" class="l2d-tools"></div>';}
+            $html.='<div id="l2d-photo" class="l2d-tools l2d-tools-r">Photo</div>
+            <a href="https://imalan.cn/archives/95/" target="_blank"><div id="l2d-about" class="l2d-tools l2d-tools-r">About</div></a>
+            <div id="l2d-hide" class="l2d-tools l2d-tools-r">Hide</div>
         </div>';
         echo $html;
+    }
+
+    /**
+     * 移动设备识别
+     *
+     * @return boolean
+     */
+    public static function isMobile(){
+        $user_agent = $_SERVER['HTTP_USER_AGENT'];
+        $mobile_browser = Array(
+            "mqqbrowser", // 手机QQ浏览器
+            "opera mobi", // 手机opera
+            "juc","iuc", 'ucbrowser', // uc浏览器
+            "fennec","ios","applewebKit/420","applewebkit/525","applewebkit/532","ipad","iphone","ipaq","ipod",
+            "iemobile", "windows ce", // windows phone
+            "240x320","480x640","acer","android","anywhereyougo.com","asus","audio","blackberry",
+            "blazer","coolpad" ,"dopod", "etouch", "hitachi","htc","huawei", "jbrowser", "lenovo",
+            "lg","lg-","lge-","lge", "mobi","moto","nokia","phone","samsung","sony",
+            "symbian","tablet","tianyu","wap","xda","xde","zte"
+        );
+        $is_mobile = false;
+        foreach ($mobile_browser as $device) {
+            if (stristr($user_agent, $device)) {
+                $is_mobile = true;
+                break;
+            }
+        }
+        return $is_mobile;
     }
 }
 ?>
