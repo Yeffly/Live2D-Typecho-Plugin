@@ -6,11 +6,11 @@
  * 
  * @package Live2D
  * @author 熊猫小A
- * @version 2.02
+ * @version 2.03
  * @link https://imalan.cn
  */
 
-define('Live2D_Plugin_VERSION', '2.02');
+define('Live2D_Plugin_VERSION', '2.03');
 class Live2D_Plugin implements Typecho_Plugin_Interface
 {   
     /**
@@ -46,11 +46,11 @@ class Live2D_Plugin implements Typecho_Plugin_Interface
     public static function config(Typecho_Widget_Helper_Form $form){
         $homeURL = new Typecho_Widget_Helper_Form_Element_Textarea('homeURL', NULL, '', _t('主页链接'), _t('主页链接，以“/”结尾'));
         $form->addInput($homeURL);
-        echo '<p>本插件需要加载jQuery与Font Awesome，如果你的主题没有引用请选择加载。<br />关于提示语的修改，请直接编辑 message.json。</p>';
+        echo '<p>本插件需要加载jQuery，如果你的主题没有引用请选择加载。<br />关于提示语的修改，请直接编辑 message.json。</p>';
         $l2dst= new Typecho_Widget_Helper_Form_Element_Checkbox('l2dst',  array(
-            'jq' => _t('配置是否加载JQuery：勾选则加载不勾选则不加载'),'fa'=>_t('配置是否加载Font Awesome：勾选则加载不勾选则不加载')
+            'jq' => _t('配置是否加载JQuery：勾选则加载不勾选则不加载')
         ),
-        array('jq','fa'), _t('基本设置'));
+        array('jq'), _t('基本设置'));
         $form->addInput($l2dst);
     }
     
@@ -73,11 +73,6 @@ class Live2D_Plugin implements Typecho_Plugin_Interface
         if(Live2D_Plugin::isMobile()){echo '<script>var dMobile=true</script>';}
         else{echo '<script>var dMobile=false</script>';}
         echo '<link rel="stylesheet" href="/usr/plugins/Live2D/css/live2d.min.css?v='.Live2D_Plugin_VERSION.'" />';
-        if (!empty(Helper::options()->plugin('Live2D')->l2dst) && in_array('fa', Helper::options()->plugin('Live2D')->l2dst))
-        {
-            echo '<link rel="stylesheet" href="/usr/plugins/Live2D/css/font-awesome.min.css?v='.Live2D_Plugin_VERSION.'" />';
-        }
-
     }
 
     /**
@@ -93,7 +88,7 @@ class Live2D_Plugin implements Typecho_Plugin_Interface
             <script type="text/javascript" src="/usr/plugins/Live2D/js/initlive2d.min.js?v='.Live2D_Plugin_VERSION.'"></script>
         ';
         if (!empty(Helper::options()->plugin('Live2D')->l2dst) && in_array('jq', Helper::options()->plugin('Live2D')->l2dst)){
-            echo '<script  src="'.Helper::options()->pluginUrl . '/Live2D/js/jquery.min.js?v='.Live2D_Plugin_VERSION.'"></script>' . "\n";   }
+            echo '<script src="https://cdn.bootcss.com/jquery/2.1.4/jquery.min.js"></script>\n';   }
     }
 
 
