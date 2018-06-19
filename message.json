@@ -67,6 +67,12 @@
 			]
 		},
 		{
+			"selector": "a[href=\"https://wiki.imalan.cn\"]",
+			"text": [
+				"不水的文章都在这里啦"
+			]
+		},
+		{
 			"selector": "a[href=\"https://imalan.cn/archives.html\"]",
 			"text": [
 				"看看我的主人还写过什么吧"
