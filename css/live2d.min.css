@@ -8,7 +8,7 @@
 #l2d-change{background:#add8e6}
 #l2d-photo{background:green}
 #l2d-about{background:#eb7a77}
-#l2d-message{padding-right:1.6em;padding-left:1.2em;background:#fcfaf2;width:16em;border-style:solid;border-width:1px;border-color:#404040}
+#l2d-message{padding-right:1.6em;padding-left:1.2em;background:#ffffff;width:16em;border-style:solid;border-width:1px;border-color:#404040}
 @media screen and (min-width:1025px){
 #live2d{width:16em}
 #l2d-message{transform:translateX(-15.2em)}
