@@ -61,6 +61,12 @@
 			]
 		},
 		{
+			"selector": "a[href=\"https://imalan.cn/links.html\"]",
+			"text": [
+				"这里是主人的朋友们～"
+			]
+		},
+		{
 			"selector": "a[href=\"https://imalan.cn/bangumi.html\"]",
 			"text": [
 				"二次元什么的最喜欢啦"
