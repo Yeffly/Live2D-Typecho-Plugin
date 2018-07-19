@@ -85,6 +85,24 @@
 			]
 		},
 		{
+			"selector": "a[href=\"https://imalan.cn/projects.html\"]",
+			"text": [
+				"大佬莫笑"
+			]
+		},
+		{
+			"selector": "a[href=\"https://imalan.cn/media.html\"]",
+			"text": [
+				"读书看电影主人都很喜欢哦"
+			]
+		},
+		{
+			"selector": "a[href=\"https://imalan.cn/cross.html\"]",
+			"text": [
+				"一些牢骚，可以算是个树洞吧"
+			]
+		},
+		{
 			"selector": "a[href=\"/\"]",
 			"text": [
 				"让我们回到开始的地方吧"
