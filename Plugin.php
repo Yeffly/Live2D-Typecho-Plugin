@@ -104,7 +104,7 @@ class Live2D_Plugin implements Typecho_Plugin_Interface
             <div id="l2d-change" class="l2d-tools l2d-tools-r">Change</div>';
             if(!Live2D_Plugin::isMobile()) {$html.='<div id="l2d-message" class="l2d-tools"></div>';}
             $html.='<div id="l2d-photo" class="l2d-tools l2d-tools-r">Photo</div>
-            <a href="https://imalan.cn/archives/95/" target="_blank"><div id="l2d-about" class="l2d-tools l2d-tools-r">About</div></a>
+            <a href="https://blog.imalan.cn/archives/95/" target="_blank"><div id="l2d-about" class="l2d-tools l2d-tools-r">About</div></a>
             <div id="l2d-hide" class="l2d-tools l2d-tools-r">Hide</div>
         </div>';
         echo $html;
