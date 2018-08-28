@@ -85,7 +85,7 @@ class Live2D_Plugin implements Typecho_Plugin_Interface
         self::insertLive2D();
         echo '
             <script type="text/javascript" src="/usr/plugins/Live2D/js/live2d.min.js?v='.Live2D_Plugin_VERSION.'"></script>
-            <script type="text/javascript" src="/usr/plugins/Live2D/js/initlive2d.min.js?v='.Live2D_Plugin_VERSION.'"></script>
+            <script type="text/javascript" src="/usr/plugins/Live2D/js/initlive2d.js?v='.Live2D_Plugin_VERSION.'"></script>
         ';
         if (!empty(Helper::options()->plugin('Live2D')->l2dst) && in_array('jq', Helper::options()->plugin('Live2D')->l2dst)){
             echo '<script src="https://cdn.bootcss.com/jquery/2.1.4/jquery.min.js"></script>';   }
