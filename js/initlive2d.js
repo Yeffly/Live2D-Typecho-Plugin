@@ -3,7 +3,7 @@ var home_Path = $("#live2d").attr("homeurl");
 var re = /x/;
 var timeout = 0;
 var hiden = false;
-console.log('%c Live2D 2.07 %c https://blog.imalan.cn/archives/95/ ', 'color: #fadfa3; background: #23b7e5; padding:5px 0;', 'background: #1c2b36; padding:5px 0;');
+console.log('%c Live2D 2.11 %c https://blog.imalan.cn/archives/95/ ', 'color: #fadfa3; background: #23b7e5; padding:5px 0;', 'background: #1c2b36; padding:5px 0;');
 function showLive2D() {
     loadlive2d("live2d", "/usr/plugins/Live2D/model/getmodel.php")
 }
