@@ -10,7 +10,7 @@
  * @link https://imalan.cn
  */
 
-define('Live2D_Plugin_VERSION', '2.07');
+define('Live2D_Plugin_VERSION', '2.1');
 class Live2D_Plugin implements Typecho_Plugin_Interface
 {   
     /**
