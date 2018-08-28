@@ -6,11 +6,11 @@
  * 
  * @package Live2D
  * @author 熊猫小A
- * @version 2.06
+ * @version 2.1
  * @link https://imalan.cn
  */
 
-define('Live2D_Plugin_VERSION', '2.06');
+define('Live2D_Plugin_VERSION', '2.07');
 class Live2D_Plugin implements Typecho_Plugin_Interface
 {   
     /**
@@ -98,13 +98,14 @@ class Live2D_Plugin implements Typecho_Plugin_Interface
      * @return void
      */
     public static function insertLive2D(){
+
         $html='<canvas id="live2d" class="live2d" width="280" height="250" homeurl="'.Typecho_Widget::widget('Widget_Options')->plugin('Live2D')->homeURL.'"></canvas>
-        <div id="l2d-tools-panel">
-            <a href="/" target="_self"><div id="l2d-home" class="l2d-tools l2d-tools-r">Home</div><a>
-            <div id="l2d-change" class="l2d-tools l2d-tools-r">Change</div>';
-            if(!Live2D_Plugin::isMobile()) {$html.='<div id="l2d-message" class="l2d-tools"></div>';}
-            $html.='<div id="l2d-photo" class="l2d-tools l2d-tools-r">Photo</div>
-            <a href="https://blog.imalan.cn/archives/95/" target="_blank"><div id="l2d-about" class="l2d-tools l2d-tools-r">About</div></a>
+        <div id="l2d-tools-panel" style="display: none">
+            <a href="/" target="_self"><div id="l2d-home" class="l2d-tools l2d-tools-r">Home</div></a>
+            <div id="l2d-change" class="l2d-tools l2d-tools-r">Change</div>
+            <div id="l2d-message" class="l2d-tools"></div>
+            <div id="l2d-photo" class="l2d-tools l2d-tools-r">Photo</div>
+            <a href="https://blog.imalan.cn/archives/95/"><div id="l2d-about" class="l2d-tools l2d-tools-r">About</div></a>
             <div id="l2d-hide" class="l2d-tools l2d-tools-r">Hide</div>
         </div>';
         echo $html;
