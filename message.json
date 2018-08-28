@@ -107,6 +107,18 @@
 			"text": [
 				"看看下一篇吧~"
 			]
+		},
+		{
+			"selector": "li.next",
+			"text": [
+				"看看下一页吧~"
+			]
+		},
+		{
+			"selector": "li.prev",
+			"text": [
+				"看看上一页吧~"
+			]
 		}
 	],
 	"click": [
