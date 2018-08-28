@@ -7,9 +7,9 @@
 			]
 		},
 		{
-			"selector": ".index-post-title a",
+			"selector": ".index-item",
 			"text": [
-				"要看看《{text}》么？"
+				"点进去看看嘛~"
 			]
 		},
 		{
@@ -27,7 +27,7 @@
 		{
 			"selector": "#l2d-message",
 			"text": [
-				"猜猜我会说什么？"
+				"点一下，猜猜我会说什么？"
 			]
 		},
 		{
@@ -48,74 +48,20 @@
 				"想知道更多关于我的事吗？"
 			]
 		},
-                {
-			"selector": "a[href=\"https://imalan.cn/\"]",
+        {
+			"selector": "a[href=\"/\"]",
 			"text": [
 				"让我们回到开始的地方"
 			]
 		},
 		{
-			"selector": "a[href=\"https://imalan.cn/about.html\"]",
+			"selector": "#toggle-nav",
 			"text": [
-				"了解一下我的主人吧～"
+				"这里有更多页面哦"
 			]
 		},
 		{
-			"selector": "a[href=\"https://imalan.cn/links.html\"]",
-			"text": [
-				"这里是主人的朋友们～"
-			]
-		},
-		{
-			"selector": "a[href=\"https://imalan.cn/bangumi.html\"]",
-			"text": [
-				"二次元什么的最喜欢啦"
-			]
-		},
-		{
-			"selector": "a[href=\"https://wiki.imalan.cn\"]",
-			"text": [
-				"不水的文章都在这里啦"
-			]
-		},
-		{
-			"selector": "a[href=\"https://imalan.cn/archives.html\"]",
-			"text": [
-				"看看我的主人还写过什么吧"
-			]
-		},
-		{
-			"selector": "a[href=\"https://imalan.cn/projects.html\"]",
-			"text": [
-				"大佬莫笑"
-			]
-		},
-		{
-			"selector": "a[href=\"https://imalan.cn/media.html\"]",
-			"text": [
-				"读书看电影主人都很喜欢哦"
-			]
-		},
-		{
-			"selector": "a[href=\"https://imalan.cn/cross.html\"]",
-			"text": [
-				"一些牢骚，可以算是个树洞吧"
-			]
-		},
-		{
-			"selector": "a[href=\"/\"]",
-			"text": [
-				"让我们回到开始的地方吧"
-			]
-		},
-		{
-			"selector": "a[href=\"https://img.imalan.cn\"]",
-			"text": [
-				"这里是主人的图床，有许多小姐姐"
-			]
-		},
-		{
-			"selector": "textarea#comment",
+			"selector": "textarea[name=text]",
 			"text": [
 				"认真填写哦~"
 			]
@@ -148,6 +94,18 @@
 			"selector": "#submit",
 			"text": [
 				"检查好了吗~"
+			]
+		},
+		{
+			"selector": "span.next",
+			"text": [
+				"看看上一篇吧~"
+			]
+		},
+		{
+			"selector": "span.prev",
+			"text": [
+				"看看下一篇吧~"
 			]
 		}
 	],
